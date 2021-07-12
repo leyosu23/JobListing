@@ -10,8 +10,11 @@
 
 ●	Getting Started - how to reproduce it on local and system requirements
 
--  I used to run on server port 3001 and node_modules are required to run this.
--  "npm install" on cmd
+-  Basically, there is need of running front-end and back-end respectively 
+### 🚨 But node_modules is missing for front-end and is essential to run this.
+-  "npm install" on client directory (cd client) on cmd to install node_module
+-  "npm start" on client directory (cd client) on cmd to run front-end
+-  "npm run devStart" on server directory (cd server) on cmd to run back-end
 
 ●	Features - descriptions of endpoints (bullet points) to interact with your api
 
