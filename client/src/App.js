@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   const [company, setCompany] = useState("");
@@ -40,53 +41,64 @@ function App() {
   
   return (
     <div className="App">
-      <h1>CRUD</h1>
+      <h1>Create a new posting</h1>
 
-      <label>Company</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setCompany(event.target.value);
-        }}
-      />
-      <label>Position</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setPosition(event.target.value);
-        }}
-      />
-      <label>Description</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setDescription(event.target.value);
-        }}
-      />
-      <label>Duration</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setDuration(event.target.value);
-        }}
-      />
-      <label>Deadline</label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setDeadline(event.target.value);
-        }}
-      />
-      <button onClick={addToList}>Add to List</button>
+
+      <table>
+        <thead >
+          <tr>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Deadline</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <input type="text" onChange={(event) => { setCompany(event.target.value); }} /></td>
+            <td> <input type="text" onChange={(event) => { setPosition(event.target.value); }} /></td>
+            <td> <input type="text" onChange={(event) => { setDescription(event.target.value); }} /></td>
+            <td> <input type="text" onChange={(event) => { setDuration(event.target.value); }} /></td>
+            <td> <input type="text" onChange={(event) => { setDeadline(event.target.value); }} /></td>
+            <td><button onClick={addToList}>Add to List</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      
+
+
+     
+
       <h1> Job List</h1>
+      
       {jobList.map((val, key) => {
         return (
           <div key={key} className="job">
-            <h1> {val.Company}  </h1>
-            <h1> {val.Position} </h1>
-            <h1> {val.Description} </h1>
-            <h1> {val.Duration} </h1>
-            <h1> {val.Deadline} </h1>
+
+            <table class="table table-sm">
+          <thead >
+            <tr>
+              <th>Company</th>
+              <th>Position</th>
+              <th>Description</th>
+              <th>Duration</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td> {val.Company}  </td>
+            <td> {val.Position} </td>
+            <td> {val.Description} </td>
+            <td> {val.Duration} </td>
+            <td> {val.Deadline} </td>
+            </tr>
+          </tbody>
+        </table>
 
             <input 
             type="text" 

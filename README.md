@@ -1,4 +1,4 @@
-### Hi there, my name's Yoonseop Lee, a candidate for Lumaki Labs Inc. in the position of Full Stack Software Developer Co-op.
+### Hi there, my name's Yoonseop Lee.
 
 
 ●	Description - short explanation (bullet points) on what the api should do
@@ -27,5 +27,3 @@
 ●	Roadmap (Optional) - future updates, upgrades, implementations, or whatever else you would want your API to do if you continue to work on it.
 
 - I has not been working on SECURITY option to register/login 
-
-### I would welcome the opportunity to discuss further in an interview. Feel free to contact me at (905)-975-9111 or by email at leyosu23@gmail.com.
