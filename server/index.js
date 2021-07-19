@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 
 const JobModel = require('./models/Job');
+const AuthModel = require('./models/Authentication')
 
 app.use(express.json());
 app.use(cors());
@@ -66,6 +67,40 @@ app.get("/read", async (req,res) => {
   } )
 })
 
+app.post("/signup", async (req,res) => {
+    const ID = req.body.ID
+    const Password = req.body.Password
+  
+    const auth = new AuthModel({ ID:ID, Password:Password });
+
+    try{
+        await auth.save();
+        res.send("inserted data");
+    }
+    catch(err) {
+        console.log(err)
+    }
+})
+
+app.post("/signin", async (req,res) => {
+    
+   
+    var ID = req.body.ID
+    var Password = req.body.Password
+  
+    await AuthModel.findOne({ID:ID, Password:Password}, function(err, AuthModel) {
+    if(err) {
+        console.log(err);
+        return res.status(500).send();
+    }
+
+    if(!user){
+        return res.status(404).send();
+    }
+
+    return res.status(200).send();
+    })
+});
 
 app.listen(3001, ()=> {
     console.log('Server running on 3001')
